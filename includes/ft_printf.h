@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/10 14:06:57 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/17 10:54:50 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/17 16:57:42 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <inttypes.h>
 # include <stdlib.h>
-# include "../libft/libft.h"
+# include "../libft/includes/libft.h"
 # define FIL 1
 
 typedef struct		s_tab

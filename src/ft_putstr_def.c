@@ -6,13 +6,12 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/06 14:29:59 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/17 10:55:38 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/17 16:58:04 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "../libft/libft.h"
 
 int		useless_fun(t_tab *tab, char *str, int fd)
 {

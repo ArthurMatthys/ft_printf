@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/18 17:40:49 by amatthys          #+#    #+#              #
-#    Updated: 2018/07/17 11:02:22 by amatthys    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/07/17 17:33:25 by amatthys    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 RELATIVE = .
@@ -35,15 +35,16 @@ CPPFLAGS = -I $(INCLUDES_PATH)
 
 all : $(NAME)
 
-$(LIB) :
-		make -C libft/
-
-$(NAME) : $(OBJ) $(LIB)
-		ar rc $(NAME) $(OBJ) $(LIB) libft/ft_strlen.o libft/ft_putchar_fd.o
-		ranlib $(NAME)
-
 %.o: %.c $(LIB)
 		$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ -c $<
+
+$(LIB) :
+		make -C libft
+
+$(NAME) : $(OBJ) $(LIB)
+		cp libft/libft.a ./$(NAME)
+		ar rc $(NAME) $(OBJ)
+		ranlib $(NAME)
 
 clean:
 		rm -rf $(OBJ)

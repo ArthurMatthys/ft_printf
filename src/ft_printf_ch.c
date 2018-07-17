@@ -6,13 +6,12 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/05 17:20:26 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/17 10:32:28 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/17 16:57:55 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "../libft/libft.h"
 
 int		ft_printf_s(va_list ap, t_tab *tab)
 {
