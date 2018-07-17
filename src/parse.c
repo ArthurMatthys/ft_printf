@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/04 18:29:01 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/12 19:39:58 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/17 10:30:07 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -67,7 +67,7 @@ int		check_len(const char *fmt, t_tab *tab)
 	return (1);
 }
 
-int		is_in(const char fmt, const char *list)
+int		is_inc(const char fmt, const char *list)
 {
 	int		i;
 
@@ -86,21 +86,21 @@ int		parse_handler(const char *fmt, t_tab *tab)
 	int	j;
 
 	j = 0;
-	while (is_in(*fmt, "-+ 0#123456789hljz."))
+	while (is_inc(*fmt, "-+ 0#123456789hljz."))
 	{
-		while (is_in(*fmt, "-+ 0#"))
+		while (is_inc(*fmt, "-+ 0#"))
 			j += check_flag(*fmt++, tab);
-		while (is_in(*fmt, "0123456789"))
+		while (is_inc(*fmt, "0123456789"))
 			j += check_width(fmt++, tab, 1);
 		if (*fmt == '.')
 		{
 			fmt++;
 			j++;
 			tab->w = 4;
-			while (is_in(*fmt, "0123456789"))
+			while (is_inc(*fmt, "0123456789"))
 				j += check_width(fmt++, tab, 0);
 		}
-		while (is_in(*fmt, "hljz"))
+		while (is_inc(*fmt, "hljz"))
 			j += check_len(fmt++, tab);
 	}
 	if (*fmt)

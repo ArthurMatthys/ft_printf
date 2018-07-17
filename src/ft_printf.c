@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/04 12:37:19 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/13 10:01:31 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/17 10:26:37 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -53,7 +53,7 @@ int		init_fun(t_fun *fun)
 
 int		inner_fun(va_list ap, t_tab *tab, t_fun *fun)
 {
-	if (is_in(tab->type, "sSpdDioOuUxXcC"))
+	if (is_inc(tab->type, "sSpdDioOuUxXcC"))
 		return (divide_case(ap, tab, fun));
 	else
 		return (ft_printf_other(tab));

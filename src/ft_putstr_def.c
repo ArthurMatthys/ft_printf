@@ -6,12 +6,13 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/06/06 14:29:59 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/19 09:12:04 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/17 10:55:38 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "../libft/libft.h"
 
 int		useless_fun(t_tab *tab, char *str, int fd)
 {
@@ -19,9 +20,9 @@ int		useless_fun(t_tab *tab, char *str, int fd)
 
 	i = 0;
 	while (!(tab->side) && tab->acc -
-			max(ft_strlen(str), (tab->width + is_in(str[0], " +-"))) - i > 0)
-		i += ft_putchar_fd((is_in(str[0], " +-") || (!tab->fill) ||
-					(is_in(tab->type, "dDi") &&
+			max(ft_strlen(str), (tab->width + is_inc(str[0], " +-"))) - i > 0)
+		i += ft_putchar_fd((is_inc(str[0], " +-") || (!tab->fill) ||
+					(is_inc(tab->type, "dDi") &&
 					tab->width && tab->acc) ? ' ' : '0'), fd);
 	return (i);
 }
@@ -56,7 +57,7 @@ int		ft_intputstr_def(char *str, t_tab *tab, int fd)
 	t[2] = 0;
 	t[3] = 0;
 	t[4] = ft_strlen(str);
-	if ((is_in(str[0], " +-") || str[1] == 'x')
+	if ((is_inc(str[0], " +-") || str[1] == 'x')
 			&& !(tab->width) && tab->acc && (tab->fill || tab->sign == 2))
 	{
 		tab->width = tab->acc;
@@ -66,7 +67,7 @@ int		ft_intputstr_def(char *str, t_tab *tab, int fd)
 	else if ((str[1] == 'x' || str[1] == 'X'))
 		tab->width += 2;
 	t[0] += useless_fun(tab, str, fd);
-	if (is_in(str[t[1]], " +-"))
+	if (is_inc(str[t[1]], " +-"))
 		t[2] -= ft_putchar_fd(str[t[1]++], fd);
 	t[0] += -t[2];
 	while (str[t[1]] && tab->w)
@@ -87,13 +88,13 @@ int		ft_putstr_def(char *str, t_tab *tab, int fd)
 	k = 0;
 	m = 0;
 	j = ft_strlen(str);
-	if (tab->w == 4 && is_in(tab->type, "cCsS"))
+	if (tab->w == 4 && is_inc(tab->type, "cCsS"))
 		j = 0;
 	while ((!(tab->side)) && (tab->acc -
 				min(j, (tab->width + j * !tab->width)) - i > 0))
 		i += ft_putchar_fd((tab->fill ? '0' : ' '), fd);
 	while (str[k] && (k < tab->width ||
-				(tab->w != 1 && tab->w != 4) || (!is_in(tab->type, "sScC"))))
+				(tab->w != 1 && tab->w != 4) || (!is_inc(tab->type, "sScC"))))
 		i += ft_putchar_fd(str[k++], fd);
 	while (tab->side && (tab->acc - i > 0))
 		i += ft_putchar_fd((tab->fill ? '0' : ' '), fd);

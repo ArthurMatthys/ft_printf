@@ -6,14 +6,15 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 13:31:16 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2017/11/24 13:31:17 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/17 10:26:06 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+int		ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return (1);
 }

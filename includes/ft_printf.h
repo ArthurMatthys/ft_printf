@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/02/10 14:06:57 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/19 09:11:07 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/17 10:54:50 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <inttypes.h>
 # include <stdlib.h>
-# include <stdio.h>
+# include "../libft/libft.h"
 # define FIL 1
 
 typedef struct		s_tab
@@ -45,7 +45,7 @@ int					ft_printf(const char *fmt, ...);
 int					parse_handler(const char *str, t_tab *tab);
 int					divide_case(va_list ap, t_tab *tab, t_fun *fun);
 
-int					is_in(const char str, const char *test);
+int					is_inc(const char str, const char *test);
 int					ft_printf_s(va_list ap, t_tab *tab);
 int					ft_printf_ss(va_list ap, t_tab *tab);
 int					ft_printf_p(va_list ap, t_tab *tab);
@@ -63,7 +63,6 @@ int					ft_printf_cc(va_list ap, t_tab *tab);
 int					ft_printf_other(t_tab *tab);
 
 int					inner_inner(const char *fmt, va_list ap2, t_tab *tab);
-int					ft_strlen(char *str);
 char				*ft_strchr(const char *str, int c);
 int					wchar_len(wchar_t c);
 int					is_ok(wchar_t c);
@@ -82,7 +81,6 @@ int					print_string(const char *str, char c, int fd);
 int					ft_intputstr_def(char *str, t_tab *tab, int fd);
 int					ft_putstr_def(char *str, t_tab *tab, int fd);
 int					ft_putwstr_def(wchar_t *str, t_tab *tab, int fd);
-int					ft_putchar_fd(char c, int fd);
 int					ft_putwchar_fd(wchar_t c, int fd);
 
 #endif
