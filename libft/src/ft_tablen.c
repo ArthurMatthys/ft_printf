@@ -6,16 +6,16 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/07/20 12:22:19 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/20 12:22:59 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/20 12:25:46 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_tablen(char **tab)
+size_t		ft_tablen(char **tab)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (tab[i])

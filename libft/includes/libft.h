@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/11/24 13:26:54 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/17 10:27:16 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/20 12:25:21 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -72,6 +72,7 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					is_in(int t, int *tab, size_t len);
 size_t				ft_strlcat(char *dst, const char *src, size_t n);
 size_t				ft_strlen(char *str);
+size_t				ft_tablen(char **tab);
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strdup(const char *s1);
