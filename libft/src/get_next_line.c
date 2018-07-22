@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/12/13 12:26:30 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/06/25 10:34:23 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/22 10:56:38 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -56,16 +56,17 @@ static int		find_str(t_fd *curr, char **tab)
 	return (1);
 }
 
-static int		end_of_file(t_fd *curr, char **tab)
+static int		end_of_file(t_fd *curr)
 {
-	*tab = ft_strdup(curr->str);
 	if (ft_strlen(curr->str))
 	{
 		curr->str = ft_strnew(0);
 		return (1);
 	}
 	else
+	{
 		return (0);
+	}
 }
 
 t_fd			**get_fd(void)
@@ -77,7 +78,7 @@ t_fd			**get_fd(void)
 
 int				get_next_line(const int fd, char **tab)
 {
-	t_fd		**list;
+	t_fd		**list = NULL;
 	char		buff[BUFF_SIZE + 1];
 	int			count;
 	t_fd		*curr;
@@ -92,7 +93,7 @@ int				get_next_line(const int fd, char **tab)
 		if ((count = read(fd, buff, BUFF_SIZE)) == -1)
 			return (-1);
 		if (count == 0)
-			return (end_of_file(curr, tab));
+			return (end_of_file(curr));
 		buff[count] = '\0';
 		temp = curr->str;
 		curr->str = ft_strjoin(curr->str, buff);
