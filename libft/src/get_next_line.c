@@ -6,7 +6,7 @@
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2017/12/13 12:26:30 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/22 10:56:38 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/07/22 13:10:35 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -78,7 +78,7 @@ t_fd			**get_fd(void)
 
 int				get_next_line(const int fd, char **tab)
 {
-	t_fd		**list = NULL;
+	t_fd		**list;
 	char		buff[BUFF_SIZE + 1];
 	int			count;
 	t_fd		*curr;
