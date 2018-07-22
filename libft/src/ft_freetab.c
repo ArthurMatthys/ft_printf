@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   get_next_line_freaddon.c                         .::    .:/ .      .::   */
+/*   ft_freetab.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/06/25 09:05:48 by amatthys     #+#   ##    ##    #+#       */
-/*   Updated: 2018/07/22 09:55:02 by amatthys    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/07/22 09:51:09 by amatthys     #+#   ##    ##    #+#       */
+/*   Updated: 2018/07/22 09:53:28 by amatthys    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
-void	free_fd(void)
+void	ft_freetab(char **tab)
 {
-	t_fd	**list;
-	t_fd	*b;
+	int	i;
 
-	list = get_fd();
-	while (*list)
+	i = 0;
+	if (tab)
 	{
-		ft_memdel((void **)&((*list)->str));
-		b = (*list);
-		*list = (*list)->next;
-		ft_memdel((void **)&b);
+		while (tab[i])
+		{
+			free(tab[i]);
+				i++;
+		}
+		free(tab);
 	}
-	ft_memdel((void **)&(*list));
-	*list = NULL;
 }

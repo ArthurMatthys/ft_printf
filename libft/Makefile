@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2018/06/07 14:26:55 by amatthys     #+#   ##    ##    #+#        #
-#    Updated: 2018/07/20 12:23:26 by amatthys    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/07/22 09:54:08 by amatthys    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -24,6 +24,7 @@ SRC_NAME = 	ft_addmatrix.c \
 		ft_detmatrix.c \
 		ft_dvpdet.c \
 		ft_dvpmatrix.c \
+		ft_freetab.c \
 		ft_idmatrix.c \
 		ft_initmatrix.c \
 		ft_isalpha.c \

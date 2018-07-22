@@ -6,7 +6,7 @@
 #    By: amatthys <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/18 17:40:49 by amatthys          #+#    #+#              #
-#    Updated: 2018/07/17 17:33:25 by amatthys    ###    #+. /#+    ###.fr      #
+#    Updated: 2018/07/22 08:57:06 by amatthys    ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 RELATIVE = .
@@ -28,7 +28,7 @@ LIB = libft/libft.a
 NAME = libftprintf.a
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 CPPFLAGS = -I $(INCLUDES_PATH)
 
 .PHONY: clean fclean all re
